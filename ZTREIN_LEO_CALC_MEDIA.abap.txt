@@ -1,0 +1,20 @@
+REPORT ZTREINOLEO.
+
+Selection-screen begin of block b1.
+    parameters p_1bim(12) TYPE p decimals 2 . 
+    parameters p_2bim(12) TYPE p decimals 2 . 
+    parameters p_3bim(12) TYPE p decimals 2 . 
+    parameters p_4bim(12) TYPE p decimals 2 . 
+Selection-screen end of block b1.
+
+
+start-of-selection.
+  data id_media(12) type p decimals 2.
+  
+   id_media =  ( p_1bim  + p_2bim + p_3bim + p_4bim ) / 4.
+  
+    if id_media < 60.  "SE
+      WRITE: 'Sua media anual foi de ' , id_media , ' Voce foi reprovado!'. 
+      ELSE.
+         WRITE: 'Sua media anual foi de ' , id_media , ' Voce foi APROVADO!'. 
+    ENDIF.
